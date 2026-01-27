@@ -9,3 +9,4 @@
 *.csv
 *.mp4
 *-local/
+*.ipynb_checkpoints/
