@@ -1,6 +1,6 @@
 # Bytes and Bonds: Cellular Automata
 
-## What is this demonstration?
+## Overview 
 
 This demo showcases a Python implemention of cellular automata, utilizing concepts from **Conway's Game of Life** to demonstrate a basic simulation of **spinodal decomposition**, a spontaneous process of phase separation that can occur in some alloy materials.
 
