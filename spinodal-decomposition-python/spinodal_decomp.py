@@ -45,30 +45,6 @@ class SpinodalBase:
               np.roll(np.roll(field, -1, axis=0), -1, axis=1))
         return A1, A2
 
-    def animate(self, interval=100):
-        """
-        animation method for visualization.
-        """
-        fig, ax = plt.subplots()
-        im = ax.imshow(self.eta, cmap='bwr', vmin = -1, vmax = 1, interpolation='none')
-        plt.colorbar(im, ax=ax)
-        plt.title(self.title)
-
-        def update_plot(frame):
-            self.step()
-            im.set_data(self.eta.copy())
-            return [im]
-
-        anim = FuncAnimation(fig, update_plot, frames=range(self.nstep), interval=interval, blit=False)
-
-        def on_close(event):
-            anim.event_source.stop()
-            plt.close('all')
-
-        fig.canvas.mpl_connect('close_event', on_close)
-        plt.show()
-
-
 class SpinodalNonConserved(SpinodalBase):
     def __init__(self, n, nstep, d, AA=1.3):
         super().__init__(n, nstep, d, AA)
